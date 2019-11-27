@@ -23,6 +23,7 @@ document.getElementById("poprun").addEventListener("click",function (){
     (function manualLoop() {
         setTimeout(function() {
             manualLoop();         
+            // restructure to enable gradient increase depending on next step!
             let i=years.indexOf(year);
             if (i!=-1){
                 frequency=numToFreq(pop[i]);
