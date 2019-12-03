@@ -35,7 +35,7 @@ document.getElementById("poprun").addEventListener("click",function (){
                     delta=0;
                 }
                 else{
-                    console.log("Yeah!");
+                    console.log("Yeah man!");
                     delta= (nextPop-lastPop)/(nextYear-lastYear);
                 }
                     
