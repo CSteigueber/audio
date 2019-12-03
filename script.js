@@ -22,7 +22,7 @@ document.getElementById("poprun").addEventListener("click",function (){
     var delta=0;
     (function manualLoop() {
         setTimeout(function() {
-            manualLoop();
+            if (year<years[years.length-1]) {manualLoop();}
             // restructure to enable gradient increase depending on next step!
             let i=years.indexOf(year);
             if ((i!=-1)&&(year<2019)){
@@ -30,14 +30,7 @@ document.getElementById("poprun").addEventListener("click",function (){
                 let nextYear=years[i+1];
                 let lastPop=pop[i];
                 let nextPop=pop[i+1];
-                if (nextYear==NaN){
-                    console.log("Oh No!");
-                    delta=0;
-                }
-                else{
-                    console.log("Yeah!");
-                    delta= (nextPop-lastPop)/(nextYear-lastYear);
-                }
+                delta= (nextPop-lastPop)/(nextYear-lastYear);
                     
             }
             nPop+=delta;
