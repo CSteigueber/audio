@@ -1,5 +1,5 @@
 const numToFreq=(num)=>{
-    return ((num+2)*1000); // adjust 
+    return ((num+2)*500); // adjust hight of frequency
 }
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 var oscillatorNode = audioCtx.createOscillator();
@@ -34,7 +34,7 @@ document.getElementById("poprun").addEventListener("click",function (){
                    
             }
             nPop+=delta;
-            document.getElementById("pop").innerHTML=`world population: ${(nPop/1000000).toFixed(2)} Mio`; // change / to * to strecht effect of frequency
+            document.getElementById("pop").innerHTML=`world population: ${(nPop/1000000).toFixed(2)} Mio`;
             document.getElementById("year").innerHTML=`Year: ${year}`;
             frequency=numToFreq(nPop);
             oscillatorNode.frequency.value = frequency;
@@ -49,6 +49,5 @@ document.getElementById("poprun").addEventListener("click",function (){
             }
         }, 100) // speed 
     }());
-
 })
 
